@@ -1,2 +1,2 @@
-web: ./start_server.sh
+web: go run main.go
 
