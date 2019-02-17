@@ -1,3 +1,2 @@
-web: go build main.go
-web: ./main
+web: ./start_server.sh
 
