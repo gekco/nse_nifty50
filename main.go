@@ -8,6 +8,7 @@ import (
     "encoding/json"
     "time"
     "html/template"
+    "os"
 )
 
 
@@ -53,5 +54,10 @@ func mainView(w http.ResponseWriter, r *http.Request) {
 func main() {
     go refreshGainersLosers()
     http.HandleFunc("/", mainView)
-    log.Fatal(http.ListenAndServe(":5000", nil))
+    var port = os.Getenv("PORT")
+    if port == "" {
+        port = "5000"
+    }
+    port =":"+port
+    log.Fatal(http.ListenAndServe(port, nil))
 }
