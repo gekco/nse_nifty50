@@ -1,0 +1,6 @@
+{
+	"ImportPath": "github.com/nse_nifty50",
+	"GoVersion": "go1.11",
+	"GodepVersion": "v80",
+	"Deps": []
+}
