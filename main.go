@@ -48,6 +48,7 @@ func mainView(w http.ResponseWriter, r *http.Request) {
         return
     }
     temp_args := map[string]interface{}{ "NIFTY 50 GAINERS" : gainers["data"], "NIFTY 50 LOSERS": losers["data"]}
+    fmt.Println(temp_args)
     t.Execute(w, temp_args)
 }
 
@@ -59,5 +60,6 @@ func main() {
         port = "5000"
     }
     port =":"+port
+    fmt.Println("______",port)
     log.Fatal(http.ListenAndServe(port, nil))
 }
