@@ -20,6 +20,7 @@ func getDataFromUrl(url string, result *map[string]interface{}) {
     
     if err != nil {
         log.Fatal(err)
+        fmt.Println("__+++______",err)
     }
     defer response.Body.Close()
 
