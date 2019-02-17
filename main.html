@@ -1,0 +1,79 @@
+<html>
+
+    <body>
+        {{range $key, $value := .}}
+        <h1> {{ $key }}  </h1>
+        <table border="1">
+            <tbody>
+            <tr>
+                <th>
+                    Symbol
+                </th>
+                <th>
+                        LTP
+                </th>
+                <th>
+                        % Change
+                </th>
+                <th>
+                        Traded Quantity
+                </th>
+                <th>
+                        Traded Value
+                </th>
+                <th>
+                        Open
+                </th>
+                <th>
+                        Low
+                </th>
+                <th>
+                        Prev. Close
+                </th>
+                <th>
+                        Latest Ex Date
+                </th>
+                <th>
+                        CA
+                </th>
+            </tr>
+            {{ range $i, $element := index $value }}
+            <tr>
+                    <td>
+                        {{ index $element "symbol" }}
+                    </td>
+                    <td>
+                            {{ index $element "ltp" }}
+                    </td>
+                    <td>
+                            {{ index $element "netPrice" }}
+                    </td>
+                    <td>
+                            {{ index $element "tradedQuantity" }}
+                    </td>
+                    <td>
+                            {{ index $element "turnoverInLakhs" }}
+                    </td>
+                    <td>
+                            {{ index $element "openPrice" }}
+                    </td>
+                    <td>
+                            {{ index $element "lowPrice" }}
+
+                    </td>
+                    <td>
+                            {{ index $element "previousPrice" }}
+                    </td>
+                    <td>
+                            {{ index $element "lastCorpAnnouncementDate" }}
+                    </td>
+                    <td>
+                            {{ index $element "lastCorpAnnouncement" }}
+                    </td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    {{end}}
+    </body>
+</html>
