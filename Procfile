@@ -1,2 +1,2 @@
-web: go run main.go
+web: nse_nifty50
 
